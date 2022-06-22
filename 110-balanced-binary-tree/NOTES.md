@@ -1,1 +1,2 @@
-​
+if difference of left and right height is greater than 1 then we will return -1 and our answer will be false
+but if our diffrenece is 1 or 0 then we will return height of the tree and our answer will be true;
