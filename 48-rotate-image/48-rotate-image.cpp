@@ -2,23 +2,27 @@ class Solution {
 public:
     void rotate(vector<vector<int>>& matrix) {
         
-        vector<vector<int>> ans;
-        vector<int> temp;
+        int  n = matrix.size();
         
-        for(int j = 0; j < matrix.size() ; j++){
+       for(int i=0; i<n; i++){
+           
+           for(int j=0; j<i; j++){             // code for transposing
+               
+               swap(matrix[i][j] , matrix[j][i]);
+               
+           }
+           
+       }
+        
+        // code for reversing each vector
+        
+        for(int i=0; i<n; i++){
             
-            for(int i = matrix.size()-1; i>=0; i--){
-                
-                temp.push_back(matrix[i][j]);
-                
-            }
-            
-            ans.push_back(temp);
-            temp.clear();
+            reverse(matrix[i].begin(), matrix[i].end());
             
         }
         
-        matrix = ans;
+        
         
     }
 };
