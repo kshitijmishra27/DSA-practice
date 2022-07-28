@@ -8,9 +8,7 @@
  */
 class Solution {
 public:
-    
-    
-    
+      
     ListNode *detectCycle(ListNode *head) {
     
          ListNode* slow = head;
@@ -23,17 +21,17 @@ public:
             
             if(fast == slow){  // agar cycle hai tabhi fast and slow wil be eqal
                 
-                fast = head;
+                fast = head;   // fast ko wapas pakadke head me dalo
                 
-                while(fast != slow){
+                while(fast != slow){   // jaise hi dubara mile thats the exact place where cycle starts
                     
-                    slow = slow->next;
+                    slow = slow->next;   // ko isbaar same time badhao
                     fast = fast->next;
                     
                 }
                 
-                return slow;
-                
+                return slow;   // return either fast or slow same result aaayega
+                            // because dono hi same jagah ko point kar rehe jaha cycle shuru hai
             }   
             
         }
