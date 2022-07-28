@@ -18,17 +18,10 @@ public:
         
         while(fast != NULL && fast->next != NULL){
             
-            fast = fast->next->next;
-            slow = slow->next;
+            fast = fast->next->next;   // khargosh = 2 steps
+            slow = slow->next;      // tortoise     = 1 stpes
             
-            if(fast == slow){
-               
-                while(fast != NULL && fast->next != NULL){
-            
-            fast = fast->next->next;
-            slow = slow->next;
-            
-            if(fast == slow){
+            if(fast == slow){  // agar cycle hai tabhi fast and slow wil be eqal
                 
                 fast = head;
                 
@@ -41,13 +34,11 @@ public:
                 
                 return slow;
                 
-            }
+            }   
             
         }
-                
-            }
-            
-        }
+        
+        // loop khatam matlab cycle tha hi nhi 
     
        return NULL;
         
