@@ -44,7 +44,7 @@ public:
               ptrb = headA;
         }
         
-    while(d--){
+    while(d--){   //  d distance tak ptr a  ko chalaya
         
         if(ptra != NULL)
         ptra = ptra->next;
@@ -55,7 +55,7 @@ public:
         
     }      
         
-        while(ptra != NULL && ptrb != NULL){
+        while(ptra != NULL && ptrb != NULL){  // jaise hi pta == ptrb hua means same node mil gaya
             
             if(ptra == ptrb){
                 return ptra;
@@ -67,7 +67,7 @@ public:
                    
         }
         
-        return NULL;
+        return NULL;   // intersection tha hi nhi 
         
     }
 };
