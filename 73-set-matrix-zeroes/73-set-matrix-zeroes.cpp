@@ -2,27 +2,32 @@ class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
         
-        int rows = matrix.size(); int cols = matrix[0].size();
+        int row = matrix.size(); int col = matrix[0].size();
         
-        vector<int> dummy1(rows,-1), dummy2(cols,-1);
+        vector<int> dummy1(row,-1),dummy2(col,-1); 
         
-        for(int i=0; i<rows; i++){
-            for(int j=0; j<cols; j++){
-                if(matrix[i][j] == 0){
-                    dummy1[i]=0;
-                    dummy2[j]=0;
-                }
-            }
-        }
+   for(int i=0; i<row; i++){
+       for(int j=0; j<col; j++){
+           
+           if(matrix[i][j] == 0){
+               
+               dummy1[i] = 0;
+               dummy2[j] = 0;
+               
+           }
+           
+       }
+   }
         
-       for(int i=0; i<rows; i++){
-            for(int j=0; j<cols; j++){
-                if(dummy1[i] == 0 || dummy2[j] ==0){
+        for(int i=0; i<row; i++){
+            for(int j=0; j<col; j++){
+                
+                if(dummy1[i] == 0 || dummy2[j] == 0){
                     matrix[i][j] = 0;
                 }
+                
             }
         }
-    
         
     }
 };
