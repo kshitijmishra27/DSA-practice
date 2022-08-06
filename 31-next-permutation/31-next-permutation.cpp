@@ -19,14 +19,14 @@ public:
             
             for(l=n-1; l>k; l--){
                 
-                if(nums[l] > nums[k]){
+                if(nums[l] > nums[k]){  // back wala element jo sabse pehle greater hai nums[k] se whi se break
                     break;
                 }
                 
             }
             
-            swap(nums[k], nums[l]);
-            reverse(nums.begin() + k + 1, nums.end());
+            swap(nums[k], nums[l]);  // swap kar diya
+            reverse(nums.begin() + k + 1, nums.end()); // last se reverse kar diya
             
         }
     }
