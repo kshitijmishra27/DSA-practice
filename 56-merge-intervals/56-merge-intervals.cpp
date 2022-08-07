@@ -2,40 +2,41 @@ class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
         
-        vector<vector<int>> ans;
+       vector<vector<int>> ans;
         
+        // agar khali hai bhai 
         if(intervals.empty()){
             return ans;
         }
         
-        sort(intervals.begin(), intervals.end());
+        sort(intervals.begin(), intervals.end()); // sort kardiya so that merge karne layak paas paad aa jaye
         
-        vector<int> tempInterval = intervals[0];
+        vector<int> tempinterval = intervals[0];
         
-        for(auto it : intervals){
+    for(auto it : intervals){
+        
+        // agar ange wale ka pehle pichle wale ke doosre se chota hai
+        
+        if(it[0] <= tempinterval[1]){
             
-            // agr ange wale ka pehla pichle wale ke doosre se chota hai 
+            // pichle wale ke second ko max out kardo...jo bhi pichle wale ke second and ange wale ke second
+            // me bada ho 
             
-            if( it[0] <= tempInterval[1] ){
-                
-                // pichle wale ke doosre ko change kardo bhai 
-                
-                tempInterval[1] = max( it[1] , tempInterval[1] );
-            }
-            
-            else{
-                // agr bada hai toh daal de bhai answer me
-                ans.push_back(tempInterval);
-                tempInterval = it;
-                
-            }
+            tempinterval[1] = max( tempinterval[1] , it[1]);
             
         }
-       
-       // ek bach gaya bhai wo bhi daal de 
-        ans.push_back(tempInterval);
         
-        // answer bhej de bhai 
+        else{  // agar ange wale ka pehle pichle wale ke doosre se bada hai
+            
+            ans.push_back(tempinterval);
+            tempinterval = it;
+            
+        }
+        
+    }
+        
+        ans.push_back(tempinterval);
+        
         return ans;
         
     }
