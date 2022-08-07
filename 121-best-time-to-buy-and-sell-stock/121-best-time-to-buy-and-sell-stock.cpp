@@ -1,17 +1,17 @@
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
+    
+        int mn = INT_MAX , mx = INT_MIN;
         
-      int maxi =0, mini = INT_MAX;
+    for(int i=0; i<prices.size(); i++){
         
-        for(int i=0; i<prices.size(); i++){
-            
-            mini = min(mini, prices[i]);
-            maxi = max(maxi, prices[i]-mini);
-            
-        }
+        mn = min(mn, prices[i]);  // checking min at index to find smallest element
+        mx = max(mx, prices[i] - mn);  // finding the maximum difference at every index;
         
-        return maxi;
+    }
+        
+        return mx;
         
     }
 };
