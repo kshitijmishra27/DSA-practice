@@ -35,8 +35,10 @@ public:
         
     }
         
+        // last wala bach gaya bhai usko bhi dalde 
         ans.push_back(tempinterval);
         
+        // return karde answer bhai
         return ans;
         
     }
