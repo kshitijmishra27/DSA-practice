@@ -31,10 +31,10 @@ public:
             
             int r = q.front().first.first; // front queue ke elements
             int c = q.front().first.second;
-            int time = q.front().second;
+            int time = q.front().second; //extracting time for latest time in front queue element so that we can update
             q.pop();
             
-            ans = max(time, ans);
+            ans = max(time, ans);  // maximing the ans for answer
             
             for(int i=0; i<4; i++){
                 
@@ -43,9 +43,9 @@ public:
             
                 if(nr>=0 && nc >=0 && nr<n && nc < m && grid[nr][nc] != 2 && grid[nr][nc] != 0 ){
                     
-                    grid[nr][nc] = 2;
-                    cnt++;
-                    q.push( { {nr,nc}, time+1} );
+                    grid[nr][nc] = 2;   // make fresh orange into rotten one
+                    cnt++;   // count of fresh orange
+                    q.push( { {nr,nc}, time+1} );  // pushing neighbouring row, column for next queue and incresing the time
                     
                 }
                 
@@ -53,11 +53,11 @@ public:
             
         }
         
-        if(cnt != fresh){
-            return -1;
+        if(cnt != fresh){  // total fresh oranges does not equal to frist bfs travelsal it means some oranges are untouched
+            return -1;// so return -1 as ek bhi orange fresh nhi banna chahiye
         }
         
-        return ans;
+        return ans;  // max time return kardo
         
     }
 };
