@@ -12,7 +12,7 @@ public:
             for(int j=0; j<m; j++){
                 
                 if(grid[i][j] == 2){
-                    q.push( {{i,j}, 0}) ; //storing  location + time
+                    q.push( {{i,j}, 0}) ; //storing  location of rotten org + time
                 }
                 else if(grid[i][j] == 1){
                     fresh++; // counting the fresh oranges
