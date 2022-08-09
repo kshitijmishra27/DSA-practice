@@ -41,10 +41,10 @@ public:
                 int nr = r + dr[i];  // neighbouring row
                 int nc = c + dc[i];  // neighbouring column
             
-                if(nr>=0 && nc >=0 && nr<n && nc < m && grid[nr][nc] != 2 && grid[nr][nc] != 0 ){
+                if(nr>=0 && nc >=0 && nr<n && nc < m && grid[nr][nc] != 2 && grid[nr][nc] != 0 ){ // not outof bound, not rotten, not empty,
                     
                     grid[nr][nc] = 2;   // make fresh orange into rotten one
-                    cnt++;   // count of fresh orange
+                    cnt++;   // count of fresh orange we got in this one and only traversal
                     q.push( { {nr,nc}, time+1} );  // pushing neighbouring row, column for next queue and incresing the time
                     
                 }
