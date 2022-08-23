@@ -3,30 +3,28 @@ public:
     int majorityElement(vector<int>& arr) {
         
         int n = arr.size();
+      
+        int cnt = 0;
+        int element =0;
         
-        if(n==1){
-            return arr[0];
-        }
-        
-        
-        int mx =   INT_MIN; 
-        
-      map<int,int> mpp;
-        
-        int ans;
+        // it is writeen ki maj element jyada hoga n/2 se so count will remain more than 0
         
         for(int i=0; i<n; i++){
             
-            mpp[arr[i]]++;
+            if(cnt == 0){
+                element = arr[i];  // elements changing
+            }
             
-          if(mpp[arr[i]] > mx){
-              mx = mpp[arr[i]];
-              ans = arr[i];
-          }
+            if(element == arr[i]){
+                cnt++;
+            }
+            else{
+                cnt--;
+            }
             
         }
-       
-        return ans;
+        
+        return element;
         
     }
 };
