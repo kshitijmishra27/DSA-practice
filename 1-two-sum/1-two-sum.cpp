@@ -2,41 +2,29 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
      
-     vector<int> dup = nums;
-     vector<int> ans;
+   unordered_map<int,int> mpp;
         
-        sort(dup.begin(), dup.end());
+   vector<int> ans;
         
-        int low = 0, high = nums.size() - 1;
-        int n1, n2;
+        int n = nums.size();
         
-        while(low < high){
+        for(int i=0; i<n; i++){
             
-            if(dup[low] + dup[high] == target){
-                n1 = dup[low];
-                n2 = dup[high];
-                break;
-            }
-            
-            else if(dup[low] + dup[high] > target){
-                high--;
-            }
-            else{
-                low++;
-            }
-            
-        }
-        
-        for(int i=0; i<nums.size(); i++){
-            if(n1 == nums[i]){
+            if(mpp.find(target - nums[i]) != mpp.end()){
+                
                 ans.push_back(i);
+                ans.push_back(mpp[target - nums[i]]);
+                
             }
-            else if(n2 == nums[i]){
-                ans.push_back(i);
+            
+            else {
+                mpp[nums[i]] = i;
             }
+            
         }
         
         return ans;
+        
     }
         
 };
