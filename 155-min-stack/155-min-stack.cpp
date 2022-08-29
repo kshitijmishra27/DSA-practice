@@ -1,4 +1,5 @@
 class MinStack {
+    
 public:
     
     vector<int> ans;
@@ -8,20 +9,26 @@ public:
     }
     
     void push(int val) {
+        
         ans.push_back(val);
+       
     }
     
     void pop() {
+      
         ans.pop_back();
+        
     }
     
     int top() {
+        
         return ans.back();
+      
     }
     
     int getMin() {
       
-        return *min_element(ans.begin(), ans.end());
+       return *min_element(ans.begin(), ans.end());
         
     }
 };
