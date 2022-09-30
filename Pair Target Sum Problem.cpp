@@ -2,7 +2,7 @@
 
 /*Pair Target Sum Problem
 
-Find whether there exist 2 numbers that sum to K.
+Find whether there exist 2 numbers that sum to reqsum.
 Important: The Array should be sorted for two pointer approach.
 
 Idea: keep a low and high pointer, decide which pointer to move on the basis of
