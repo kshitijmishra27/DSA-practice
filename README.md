@@ -14,11 +14,12 @@
 ### This repository is open to all members of the GitHub community. Any member can contribute to this project!
 # Guidelines
 
+
 # Steps For Contribution
 
-0. Star 
+0. Star <a href="https://github.com/tanyagupta0201/Hacktoberfest-2022" title="this">this</a> repository.
 
-1. Fork 
+1. Fork <a href="https://github.com/tanyagupta0201/Hacktoberfest-2022" title="this">this</a> repository.
 
 2. Clone the forked repository.
 ```css
