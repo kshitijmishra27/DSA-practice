@@ -5,21 +5,27 @@
   <https://www.google.com/url?sa=i&url=https%3A%2F%2Fdev.to%2Fgithub%2Fhow-to-get-ready-for-hacktoberfest-2022-2ck2&psig=AOvVaw3ezI7pi39kHIEfe-GkedLX&ust=1664646042501000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPCIsPOHvfoCFQAAAAAdAAAAABAD>
 </p>
 
-## This repository aims to help code beginners with their first successful pull request and open source contribution. :partying_face:
+## This repository is helpful for all people who wants to revise the DSA concepts or learn the new DSA concepts :partying_face:
 
-:star: Feel free to use this project to make your first contribution to an open-source project on GitHub. Practice making your first pull request to a public repository before doing the real thing!
+:star: Feel free to use this project to make your first contribution to an open-source project on GitHub. as problems should be unique so that people learn as well as contribute togeather
 
-:star: Make sure to grab some cool swags during Hacktoberfest by getting involved in the open-source community.
+:star: Learn , Revise and Contribute 😄❤
 
 ### This repository is open to all members of the GitHub community. Any member can contribute to this project!
+
 # Guidelines
 
+    1. No spam pull requests
+    2. Only unique dsa problems and their solutions should be shared
+    3. copy pasted and revised dsa problems are not allowed
+
+---
 
 # Steps For Contribution
 
-0. Star <a href="https://github.com/tanyagupta0201/Hacktoberfest-2022" title="this">this</a> repository.
+0. Star 
 
-1. Fork <a href="https://github.com/tanyagupta0201/Hacktoberfest-2022" title="this">this</a> repository.
+1. Fork 
 
 2. Clone the forked repository.
 ```css
