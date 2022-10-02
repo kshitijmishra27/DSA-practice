@@ -1,0 +1,32 @@
+#include<iostream>
+#include<list>
+using namespace std;
+int main()
+{
+           list<int>sample{1,2,3};
+           list<int>::iterator it=sample.begin();
+           int n,val,pos;
+           cout<<"Enter the number of elements you want to add:";
+           cin>>n;
+           for(int i=0;i<n;i++)
+           {
+                      cout<<"Where you want to enter?(0-start,100-end):";
+                      cin>>pos;
+                      if(pos==0)
+                      {
+                                 cout<<"Enter value:";
+                                 cin>>val;
+                                 sample.push_front(val);
+                      }
+                      else if(pos==100)
+                      {
+                                 cout<<"Enter value:";
+                                 cin>>val;
+                                 sample.push_back(val);
+                      }
+           }
+           sample.sort();
+           it++;
+           cout<<"Second least element:"<<*(it);
+           return 0;
+}
