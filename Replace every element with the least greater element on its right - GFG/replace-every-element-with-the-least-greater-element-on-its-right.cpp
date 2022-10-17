@@ -11,7 +11,7 @@ class Solution{
     public:
     vector<int> findLeastGreater(vector<int>& arr, int n) {
         
-        vector<int> ans;
+        vector<int> ans(n);
         set<int> st;
         
       for(int i=n-1; i>=0; i--){
@@ -21,15 +21,14 @@ class Solution{
           auto it = st.upper_bound(arr[i]);
           
           if(it == st.end()){
-              ans.push_back(-1);
+              ans[i] = -1;
           }
           else{
-              ans.push_back(*it);
+              ans[i] = *it;
           }
           
       }
       
-      reverse(ans.begin(), ans.end());
       
       return ans;
         
