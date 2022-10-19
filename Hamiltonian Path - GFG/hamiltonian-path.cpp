@@ -29,7 +29,6 @@ class Solution
         }
         
         vis[node] = 0;
-        cnt--;
         
         return false;
         
