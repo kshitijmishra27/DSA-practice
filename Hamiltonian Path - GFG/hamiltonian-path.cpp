@@ -7,7 +7,7 @@ class Solution
 {
     public:
     
-    bool dfs(vector<int> adj[], vector<int> &vis, int node, int n, int cnt){
+    bool dfs(vector<int> adj[], vector<int> vis, int node, int n, int cnt){
         
         vis[node] = 1;
         cnt++;
