@@ -3,41 +3,80 @@
 using namespace std;
 
 // } Driver Code Ends
+
+class DisjointSet {
+    vector<int> parent, size; 
+public: 
+    DisjointSet(int n) {
+        parent.resize(n+1);
+        size.resize(n+1); 
+        for(int i = 0;i<=n;i++) {
+            parent[i] = i; 
+            size[i] = 1; 
+        }
+    }
+
+    int findUPar(int node) {
+        if(node == parent[node])
+            return node; 
+        return parent[node] = findUPar(parent[node]); 
+    }
+
+    void unionBySize(int u, int v) {
+        int ulp_u = findUPar(u); 
+        int ulp_v = findUPar(v); 
+        if(ulp_u == ulp_v) return; 
+        if(size[ulp_u] < size[ulp_v]) {
+            parent[ulp_u] = ulp_v; 
+            size[ulp_v] += size[ulp_u]; 
+        }
+        else {
+            parent[ulp_v] = ulp_u;
+            size[ulp_u] += size[ulp_v]; 
+        }
+    }
+}; 
+
 class Solution
 {
+    
 	public:
 	//Function to find sum of weights of edges of the Minimum Spanning Tree.
     int spanningTree(int V, vector<vector<int>> adj[])
     {
         // code here
-                
-        priority_queue< pair<int,int> , 
-        vector<pair<int,int>>, greater<pair<int,int>> > pq;
         
-        vector<int> vis(V,0);
+        vector< pair<int, pair<int,int>> > edges;
+                
+        for(int i=0; i<V; i++){
+            
+            for(auto &it : adj[i]){
+                
+                int adjnod = it[0];
+                int wt = it[1];
+                int node =i;
+                
+                edges.push_back({wt, {node,adjnod}});
+            }
+            
+        }
+        
+        // sorting for getting smallest distance
+        sort(edges.begin(), edges.end());
+        
         int sum = 0;
         
-        pq.push({0,0});
+        DisjointSet ds(V);
         
-        while(!pq.empty()){
+        for(auto it : edges){
             
-            int wt = pq.top().first;
-            int node = pq.top().second;
-            pq.pop();
+            int wt = it.first;
+            int node = it.second.first;
+            int adjnode = it.second.second;
             
-            if(vis[node] == 1)  continue;
-            
-            vis[node] = 1;
-            sum += wt;
-            
-            for(auto &it : adj[node]){
-                
-                int adjnode = it[0];
-                int adjwt = it[1];
-                
-                if(!vis[adjnode])
-                pq.push({adjwt, adjnode});
-                
+            if(ds.findUPar(node) != ds.findUPar(adjnode)){
+                ds.unionBySize(node, adjnode);
+                sum += wt;
             }
             
         }
@@ -46,6 +85,39 @@ class Solution
         
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //{ Driver Code Starts.
 
