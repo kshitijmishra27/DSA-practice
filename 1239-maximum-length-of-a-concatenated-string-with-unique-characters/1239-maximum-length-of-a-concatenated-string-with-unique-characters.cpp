@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    void print(vector<string> &arr, int n ,int i,  vector<int> vis, int &maxlen, int currlen){
+    void print(vector<string> &arr, int n ,int i,  vector<int> &vis, int &maxlen, int currlen){
         
         if(i == n){
             maxlen = max(maxlen, currlen);
