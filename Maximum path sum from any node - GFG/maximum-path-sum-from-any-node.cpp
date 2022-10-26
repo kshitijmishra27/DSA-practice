@@ -85,23 +85,13 @@ class Solution {
   public:
     //Function to return maximum path sum from any node in a tree.
     
-    void findnode(Node* node, int &maxi){
-        
-        if(node == NULL) return;
-        
-    findnode(node->left, maxi);
-    findnode(node->right, maxi);
-        
-    maxi = max(maxi, node->data); 
-        
-    }
-    
-    int maxpath(Node* node, int &maxi){
+    int maxpath(Node* node, int &maxi, int &edgecase){
         
         if(node == NULL) return 0;
         
-        int lh = max( 0 , maxpath(node->left, maxi));
-        int rh = max( 0, maxpath(node->right, maxi));
+         edgecase = max(edgecase, node->data);
+        int lh = max( 0 , maxpath(node->left, maxi, edgecase));
+        int rh = max( 0, maxpath(node->right, maxi, edgecase));
         
         maxi = max(maxi, lh + rh + node->data);
 
@@ -113,15 +103,12 @@ class Solution {
     {
       
       int maxi=0;
+      int edgecase = INT_MIN;
       
-      maxpath(root, maxi);
+      maxpath(root, maxi, edgecase);
       
       if(maxi == 0){
-          
-          maxi = INT_MIN;
-          findnode(root, maxi);
-          return maxi;
-          
+          return edgecase;
       }
       
       return maxi;
