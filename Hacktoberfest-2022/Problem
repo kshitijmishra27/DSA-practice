@@ -1,0 +1,64 @@
+Problem
+Chef considers an array good if it has no subarray of size less than NN such that the GCD of all the elements of the subarray is equal to 11.
+
+Chef has an array AA of size NN with him. He wants to convert it into a good array by applying a specific operation.
+In one operation, Chef can choose any subarray and reverse it.
+
+Find the minimum number of operations required to convert the array into a good array and the operations themselves. If there are multiple ways to achieve the result, print any.
+If it is not possible to convert the array into a good array, print -1−1 instead.
+
+Note: A subarray of an array is formed by deletion of several (possibly zero) elements from the beginning and several (possibly zero) elements from the end of the array.
+
+Input Format
+First line will contain TT, number of test cases. Then the test cases follow.
+The first line of each test case contains of single integer NN denoting the length of the array.
+The second line contains NN space-separated integers A_1, A_2,\ldots, A_NA 
+1
+​
+ ,A 
+2
+​
+ ,…,A 
+N
+​
+  representing the initial array.
+Output Format
+If there is a way to convert the given array into a good array, then:
+In a single line, output XX denoting the minimum number of operations required.
+In the following XX lines, output 22 integers - LL and RR denoting the left and right index of the subarray you want to reverse. Note that, (1\le L\le R\le N)(1≤L≤R≤N).
+If there is no way to convert, print -1−1 in a single line.
+Constraints
+1 \leq T \leq 40001≤T≤4000
+2 \leq N \leq 10^52≤N≤10 
+5
+ 
+1 \leq A_i \leq 10^{18}1≤A 
+i
+​
+ ≤10 
+18
+ 
+The sum of NN over all test cases won't exceed 10^510 
+5
+ .
+Sample 1:
+Input
+Output
+3
+3
+3 2 6
+4
+3 2 4 8
+4
+6 15 9 18
+ 
+1
+2 3
+-1
+0
+Explanation:
+Test case 11: We need only one operation to convert the array into a good array. Choose L = 2, R = 3L=2,R=3 and reverse the subarray [2, 6][2,6] to [6, 2][6,2]. Thus, the final array is [3, 6, 2][3,6,2]. Note that in the final array, no subarray of length less than NN has gcd equal to 11.
+
+Test case 22: It is not possible to convert the given array to a good array using any number of operations.
+
+Test case 33: The given array is already good. That is, no subarray of length less than NN has gcd equal to 11. Thus, we need 00 operations.
