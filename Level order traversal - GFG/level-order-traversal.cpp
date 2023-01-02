@@ -36,6 +36,52 @@ struct Node
     }
 };
  */
+ 
+ 
+ /*
+ 
+           vector<int> ans;
+        
+        if(node == NULL) return ans;     
+        
+    queue<Node*> q;
+     q.push(node);
+        
+        while(!q.empty()){
+            
+            int n = q.size();
+            
+            for(int i=0; i<n; i++){
+                
+                Node* node = q.front();
+                q.pop();
+                
+                if(node->left != NULL) q.push(node->left);
+                if(node->right != NULL) q.push(node->right);
+                
+                ans.push_back(node->data);
+            }
+        }
+        
+        return ans;
+ */
+
+
+
+/* A binary tree Node
+
+struct Node
+{
+    int data;
+    struct Node* left;
+    struct Node* right;
+    
+    Node(int x){
+        data = x;
+        left = right = NULL;
+    }
+};
+ */
 
 
 class Solution
@@ -72,6 +118,30 @@ class Solution
         
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //{ Driver Code Starts.
 
